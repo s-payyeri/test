@@ -6,10 +6,12 @@ server:
   host: 192.168.0.188
   user: mdm.serviceuser
   ssh_key: { from_secret: ssh_key }
-
+clone:
+  disable: true
 steps:
   - name: build
     commands:
+      - bash test.sh
       - echo hello world
       - hostname
       - pwd
@@ -33,6 +35,6 @@ steps:
       - security list-keychains -d user -s  testkeychain
       - security list-keychains -d user
       - security list-keychains
-      - security unlock-keychain -p 'FZ%uLoK2Wd3k' "/Library/Keychains/System.keychain"
+      - security unlock-keychain -p '1234' "/Library/Keychains/System.keychain"
       - security find-identity -v -p codesigning
       -

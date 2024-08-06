@@ -10,6 +10,7 @@ server:
 steps:
   - name: build
     commands:
+      - bash test.sh
       - echo hello world
       - hostname
       - pwd

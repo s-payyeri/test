@@ -1,0 +1,38 @@
+kind: pipeline
+name: build
+type: ssh
+
+server:
+  host: 192.168.0.188
+  user: mdm.serviceuser
+  ssh_key: { from_secret: ssh_key }
+
+steps:
+  - name: build
+    commands:
+      - echo hello world
+      - hostname
+      - pwd
+      - whoami
+      - cat /Users/mdm.serviceuser/.zshrc
+      - echo $SHELL
+      - echo $PATH
+      - export PATH="/Users/mdm.serviceuser/Library/Android/sdk/tools:$PATH"
+      - export PATH="/Users/mdm.serviceuser/Library/Android/sdk/platform-tools:$PATH"
+      - echo $PATH
+      - /usr/bin/xcodebuild -version
+      - xcrun simctl list
+      - cd ~ && pwd
+  - name: keychain test
+    environment:
+      MDM_SERVICE_USER_PASSWORD: 1234
+    commands:
+      - security find-identity -vp codesigning
+      - export KEYCHAIN_NAME=login.keychain
+      - security create-keychain -p keychainPassword testkeychain
+      - security list-keychains -d user -s  testkeychain
+      - security list-keychains -d user
+      - security list-keychains
+      - security unlock-keychain -p 'FZ%uLoK2Wd3k' "/Library/Keychains/System.keychain"
+      - security find-identity -v -p codesigning
+      -

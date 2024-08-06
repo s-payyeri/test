@@ -6,7 +6,8 @@ server:
   host: 192.168.0.188
   user: mdm.serviceuser
   ssh_key: { from_secret: ssh_key }
-
+clone:
+  disable: true
 steps:
   - name: build
     commands:

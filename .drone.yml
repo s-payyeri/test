@@ -34,6 +34,6 @@ steps:
       - security list-keychains -d user -s  testkeychain
       - security list-keychains -d user
       - security list-keychains
-      - security unlock-keychain -p 'FZ%uLoK2Wd3k' "/Library/Keychains/System.keychain"
+      - security unlock-keychain -p '1234' "/Library/Keychains/System.keychain"
       - security find-identity -v -p codesigning
       -

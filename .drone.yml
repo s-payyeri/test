@@ -2,8 +2,8 @@ kind: pipeline
 name: build
 type: ssh
 
-clone: 
-  disable: true
+# clone: 
+#   disable: true
 server:
   host: tio-454.local
   user: mdmserviceuser
@@ -13,9 +13,8 @@ server:
 steps:
   - name: clone
     commands:
+      - ls 
       - pwd
-    environment: 
-      HOME: ~/
   - name: build
     commands:
       - bash test.sh

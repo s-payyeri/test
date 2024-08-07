@@ -16,7 +16,7 @@ steps:
     commands:
       - pwd
     environment: 
-      HOME: ~
+      HOME: ~/
   - name: build
     commands:
       - bash test.sh

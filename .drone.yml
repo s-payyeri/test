@@ -1,6 +1,6 @@
 kind: pipeline
 name: build
-type: docker
+type: ssh
 
 server:
   host: tio-454.local

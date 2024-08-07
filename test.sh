@@ -1,1 +1,3 @@
 echo "Test"
+
+ruby -v

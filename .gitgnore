@@ -3,7 +3,7 @@ docker run \
   --env=DRONE_GITHUB_CLIENT_ID=Ov23liCHaSw7NUfWCSOl \
   --env=DRONE_GITHUB_CLIENT_SECRET=db7d283b3f6904e06f978300a2fea3efd3e930e5 \
   --env=DRONE_RPC_SECRET=c2b84aae104ebab572d2366f71c21100 \
-  --env=DRONE_SERVER_HOST=unbiased-mayfly-nearby.ngrok-free.app \
+  --env=DRONE_SERVER_HOST=https://breezy-impalas-rescue.loca.lt \
   --env=DRONE_SERVER_PROTO=https \
   --env=DRONE_DEBUG=true \
   --env=DRONE_LOGS_DEBUG=true \
@@ -17,13 +17,13 @@ docker run \
   --name=drone \
   drone/drone:2
 
-  https://unbiased-mayfly-nearby.ngrok-free.app
+  https://https://breezy-impalas-rescue.loca.lt
 
 
   docker run --detach \
   --volume=/var/run/docker.sock:/var/run/docker.sock \
   --env=DRONE_RPC_PROTO=https \
-  --env=DRONE_RPC_HOST=unbiased-mayfly-nearby.ngrok-free.app \
+  --env=DRONE_RPC_HOST=https://breezy-impalas-rescue.loca.lt \
   --env=DRONE_RPC_SECRET=c2b84aae104ebab572d2366f71c21100 \
   --env=DRONE_RUNNER_CAPACITY=2 \
   --env=DRONE_RUNNER_NAME=my-first-runner \

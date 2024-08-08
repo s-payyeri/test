@@ -22,11 +22,11 @@ steps:
       - hostname
       - pwd
       - whoami
-      - cat /Users/mdm.serviceuser/.zshrc
+      - cat /Users/mdmserviceuser/.zshrc
       - echo $SHELL
       - echo $PATH
-      - export PATH="/Users/mdm.serviceuser/Library/Android/sdk/tools:$PATH"
-      - export PATH="/Users/mdm.serviceuser/Library/Android/sdk/platform-tools:$PATH"
+      - export PATH="/Users/mdmserviceuser/Library/Android/sdk/tools:$PATH"
+      - export PATH="/Users/mdmserviceuser/Library/Android/sdk/platform-tools:$PATH"
       - echo $PATH
       - /usr/bin/xcodebuild -version
       - xcrun simctl list
